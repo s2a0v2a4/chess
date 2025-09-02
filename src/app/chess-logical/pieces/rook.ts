@@ -1,4 +1,6 @@
+import { Color, Coords, FENChar } from "../models";
 import { Piece } from "./piece";
+
 
 export class Rook extends Piece{
     private _hasMoved: boolean = false;
