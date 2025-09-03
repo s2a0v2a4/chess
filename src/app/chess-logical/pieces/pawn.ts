@@ -25,11 +25,11 @@ export class Pawn extends Piece {
             return this._hasMoved;
         }
 
-        public set hasMoved(value: boolean) {
-            this._hasMoved = value;
+        public set hasMoved(_) {
+            this._hasMoved = true;
             this.directions = [
                 { x: 1, y: 0 },
-                { x: 1, y: 1 },
+                { x: 1 y: 1 },
                 { x: 1, y: -1 }
             ];
             if(this.pieceColor === Color.Black) this.setBlackPawnDirection();
