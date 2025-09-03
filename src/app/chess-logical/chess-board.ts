@@ -11,9 +11,8 @@ export class ChessBoard {
     private _board: (Piece | null)[][];
     private _PlayerColor = Color.White;
 
-
     constructor() {
-        this._ChessBoard = [
+        this._board = [
             [
                 new Rook(Color.White), new Knight(Color.White), new Bishop(Color.White), new Queen(Color.White),
                 new King(Color.White), new Bishop(Color.White), new Knight(Color.White), new Rook(Color.White)
@@ -22,16 +21,19 @@ export class ChessBoard {
                 new Pawn(Color.White), new Pawn(Color.White), new Pawn(Color.White), new Pawn(Color.White),
                 new Pawn(Color.White), new Pawn(Color.White), new Pawn(Color.White), new Pawn(Color.White)
             ],
-            [null, null, null, null, null, null, null, null],[null, null, null, null, null, null, null, null],[null, null, null, null, null, null, null, null],[null, null, null, null, null, null, null, null],
-            [
-                new Rook(Color.Black), new Knight(Color.Black), new Bishop(Color.Black), new Queen(Color.Black),
-                new King(Color.Black), new Bishop(Color.Black), new Knight(Color.Black), new Rook(Color.Black)
-            ],
+            [null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null],
             [
                 new Pawn(Color.Black), new Pawn(Color.Black), new Pawn(Color.Black), new Pawn(Color.Black),
                 new Pawn(Color.Black), new Pawn(Color.Black), new Pawn(Color.Black), new Pawn(Color.Black)
+            ],
+            [
+                new Rook(Color.Black), new Knight(Color.Black), new Bishop(Color.Black), new Queen(Color.Black),
+                new King(Color.Black), new Bishop(Color.Black), new Knight(Color.Black), new Rook(Color.Black)
             ]
-        ]
+        ];
     }
 
     public get PlayerColor(): Color {
@@ -39,7 +41,7 @@ export class ChessBoard {
     }
 
     public get chessBoardView(): (FENChar | null)[][] {
-        return this._chessBoard.map(row => {
+        return this._board.map(row => {
             return row.map(piece => piece instanceof Piece ? piece.FENChar : null);
         });
     }

@@ -4,16 +4,16 @@ import { Piece } from "./piece";
 export class Bishop extends Piece {
 
     protected override _FENChar: FENChar;
-    protected _directions: Coords[] = [
-        { x: 1, y: 1 },
-        { x: 1, y: -1 },
-        { x: -1, y: 1 },
-        { x: -1, y: -1 }
-    ];
+    protected override _directions: Coords[];
 
-
-    constuctor(private pieceColor:Color){
-        super(pieceColor);
-        this._FENChar = pieceColor === Color.White ? FENChar.WhiteBishop : FENChar.BlackBishop;
+    constructor(color: Color) {
+        super(color);
+        this._FENChar = color === Color.White ? FENChar.WhiteBishop : FENChar.BlackBishop;
+        this._directions = [
+            { x: 1, y: 1 },
+            { x: 1, y: -1 },
+            { x: -1, y: 1 },
+            { x: -1, y: -1 }
+        ];
     }
 }

@@ -9,7 +9,6 @@ export class Pawn extends Piece {
         { x: 2, y: 0 },
         { x: 1, y: 1 },
         { x: 1, y: -1 }
-
     ];
 
     constructor(private pieceColor: Color) {
@@ -27,9 +26,9 @@ export class Pawn extends Piece {
 
         public set hasMoved(_) {
             this._hasMoved = true;
-            this.directions = [
+            this._directions = [
                 { x: 1, y: 0 },
-                { x: 1 y: 1 },
+                { x: 1, y: 1 },
                 { x: 1, y: -1 }
             ];
             if(this.pieceColor === Color.Black) this.setBlackPawnDirection();
